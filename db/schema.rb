@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_07_19_165104) do
-=======
-
-ActiveRecord::Schema.define(version: 2021_07_19_163039) do
->>>>>>> 9d4050b15f5af4120bc7fb42db15f31ba64a6cd9
+ActiveRecord::Schema.define(version: 2021_07_19_172015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +35,8 @@ ActiveRecord::Schema.define(version: 2021_07_19_163039) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "categories"
+    t.text "survey_question_text"
+
   end
 
 end
