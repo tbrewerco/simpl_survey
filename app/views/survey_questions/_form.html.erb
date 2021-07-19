@@ -1,0 +1,22 @@
+<%= form_with(model: survey_question) do |form| %>
+  <% if survey_question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(survey_question.errors.count, "error") %> prohibited this survey_question from being saved:</h2>
+
+      <ul>
+        <% survey_question.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

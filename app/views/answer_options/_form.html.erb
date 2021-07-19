@@ -1,0 +1,32 @@
+<%= form_with(model: answer_option) do |form| %>
+  <% if answer_option.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(answer_option.errors.count, "error") %> prohibited this answer_option from being saved:</h2>
+
+      <ul>
+        <% answer_option.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :answer_numeric %>
+    <%= form.text_field :answer_numeric %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer_boolean %>
+    <%= form.text_field :answer_boolean %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer_text %>
+    <%= form.text_field :answer_text %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

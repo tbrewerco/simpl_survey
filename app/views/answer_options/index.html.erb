@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Answer Options</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Answer numeric</th>
+      <th>Answer boolean</th>
+      <th>Answer text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @answer_options.each do |answer_option| %>
+      <tr>
+        <td><%= answer_option.answer_numeric %></td>
+        <td><%= answer_option.answer_boolean %></td>
+        <td><%= answer_option.answer_text %></td>
+        <td><%= link_to 'Show', answer_option %></td>
+        <td><%= link_to 'Edit', edit_answer_option_path(answer_option) %></td>
+        <td><%= link_to 'Destroy', answer_option, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Answer Option', new_answer_option_path %>
