@@ -17,6 +17,13 @@ ActiveRecord::Schema.define(version: 2021_07_19_062131) do
 
   create_table "survey_questions", force: :cascade do |t|
     t.integer "user_id"
+  end
+  
+  create_table "answer_options", force: :cascade do |t|
+    t.integer "answer_numeric"
+    t.boolean "answer_boolean"
+    t.text "answer_text"
+
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
