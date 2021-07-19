@@ -24,7 +24,6 @@ class ChosenAnswersController < ApplicationController
             render json: @chosen_answer.errors, status: :unprocessable_entity
         end
     end
-end
 
 # PATCH/PUT /chosen_answers/1
 def update
