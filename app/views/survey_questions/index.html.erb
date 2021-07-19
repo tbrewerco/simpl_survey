@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Survey Questions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @survey_questions.each do |survey_question| %>
+      <tr>
+        <td><%= survey_question.user_id %></td>
+        <td><%= link_to 'Show', survey_question %></td>
+        <td><%= link_to 'Edit', edit_survey_question_path(survey_question) %></td>
+        <td><%= link_to 'Destroy', survey_question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Survey Question', new_survey_question_path %>
