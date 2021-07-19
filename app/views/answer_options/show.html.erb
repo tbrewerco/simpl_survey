@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Answer numeric:</strong>
+  <%= @answer_option.answer_numeric %>
+</p>
+
+<p>
+  <strong>Answer boolean:</strong>
+  <%= @answer_option.answer_boolean %>
+</p>
+
+<p>
+  <strong>Answer text:</strong>
+  <%= @answer_option.answer_text %>
+</p>
+
+<%= link_to 'Edit', edit_answer_option_path(@answer_option) %> |
+<%= link_to 'Back', answer_options_path %>
