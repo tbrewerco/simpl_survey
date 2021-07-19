@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_07_19_172015) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "categories"
     t.text "survey_question_text"
+
   end
 
 end
