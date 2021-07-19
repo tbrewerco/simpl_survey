@@ -1,69 +1,59 @@
 class SurveyQuestionsController < ApplicationController
   before_action :set_survey_question, only: %i[ show edit update destroy ]
 
-  # GET /survey_questions or /survey_questions.json
+  # GET /survey_questions
   def index
-    @survey_questions = SurveyQuestion.all
+    @survey_questions = get_survey_questions
+    render json: @survey_questions
   end
 
-  # GET /survey_questions/1 or /survey_questions/1.json
+  # GET /survey_questions/1
   def show
+    render json: @survey_question
   end
 
-  # GET /survey_questions/new
-  def new
-    @survey_question = SurveyQuestion.new
-  end
-
-  # GET /survey_questions/1/edit
-  def edit
-  end
-
-  # POST /survey_questions or /survey_questions.json
+  # POST /survey_questions
   def create
     @survey_question = SurveyQuestion.new(survey_question_params)
 
-    respond_to do |format|
       if @survey_question.save
-        format.html { redirect_to @survey_question, notice: "Survey question was successfully created." }
-        format.json { render :show, status: :created, location: @survey_question }
+        render json: get_survey_questions, status: :created, location: @survey_question
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @survey_question.errors, status: :unprocessable_entity }
+        render json: @survey_question.errors, status: :unprocessable_entity 
       end
     end
-  end
 
-  # PATCH/PUT /survey_questions/1 or /survey_questions/1.json
+
+  # PATCH/PUT /survey_questions/1 
   def update
-    respond_to do |format|
       if @survey_question.update(survey_question_params)
-        format.html { redirect_to @survey_question, notice: "Survey question was successfully updated." }
-        format.json { render :show, status: :ok, location: @survey_question }
+        render json: get_survey_questions
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @survey_question.errors, status: :unprocessable_entity }
+        render json: @survey_question.errors, status: :unprocessable_entity 
       end
     end
-  end
+
 
   # DELETE /survey_questions/1 or /survey_questions/1.json
   def destroy
     @survey_question.destroy
-    respond_to do |format|
-      format.html { redirect_to survey_questions_url, notice: "Survey question was successfully destroyed." }
-      format.json { head :no_content }
+    render json: get_survey_questions
     end
-  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def get_survey_questions
+      SurveyQuestion.order('created_at DESC')
+    end
+
     def set_survey_question
       @survey_question = SurveyQuestion.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def survey_question_params
-      params.require(:survey_question).permit(:user_id)
+      params.require(:survey_question).permit(:survey_question_text, :categories)
     end
 end
