@@ -10,5 +10,26 @@
         survey_question_text: Faker::Lorem.question,
         categories: Faker::Lorem.word
     )
-
 end
+
+
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 1}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 1}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 2}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 2}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 3}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 3}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 4}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 4}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 5}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 5}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 6}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 6}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 7}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 7}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 8}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 8}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 9}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 9}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 10}])
+AnswerOption.create([{answer_text: Faker::Lorem.paragraph, survey_questions_id: 10}])
