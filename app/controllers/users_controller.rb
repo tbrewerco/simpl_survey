@@ -21,23 +21,26 @@ class UsersController < ApplicationController
         render json: @user.errors, status: :unprocessable_entity 
       end
     end
-  end
+
+
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
       if @user.update(user_params)
-        render : @user, status: :ok, location: @user 
+        render json: @user, status: :ok, location: @user 
+
       else
         render json: @user.errors, status: :unprocessable_entity 
       end
     end
   end
 
+
+
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
     render json: @user
-    end
   end
 
   private
@@ -50,4 +53,4 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:google_id)
     end
-end
+
