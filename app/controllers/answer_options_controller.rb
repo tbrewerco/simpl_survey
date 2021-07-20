@@ -25,8 +25,7 @@ class AnswerOptionsController < ApplicationController
 
       end
     end
-  end
-
+  
   # PATCH/PUT /answer_options/1 
   def update
       if @answer_option.update(answer_option_params)
@@ -48,6 +47,7 @@ class AnswerOptionsController < ApplicationController
   private
     def get_answer_options
       AnswerOption.order('created_at DESC')
+    end
 
     def set_answer_option
       @answer_option = AnswerOption.find(params[:id])

@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(version: 2021_07_20_173610) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "categories"
+    t.text "survey_question_text"
+    t.integer "total_votes"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "google_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
