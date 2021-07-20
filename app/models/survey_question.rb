@@ -1,3 +1,3 @@
 class SurveyQuestion < ApplicationRecord
-    # has_many :answer_options
+    has_many :answer_options
 end
