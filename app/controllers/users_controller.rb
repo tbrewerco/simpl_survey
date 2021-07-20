@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ :show :update :destroy ]
+  protect_from_forgery with: :null_session
 
   # GET /users 
   def index
@@ -51,6 +52,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:google_id)
+      params.require(:users).permit(:google_id)
     end
 
