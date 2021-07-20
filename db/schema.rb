@@ -10,29 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_154011) do
+ActiveRecord::Schema.define(version: 2021_07_20_161251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answer_options", force: :cascade do |t|
     t.integer "answer_numeric"
-    t.boolean "answer_boolean"
     t.text "answer_text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "survey_questions_id"
+    t.integer "survey_question_id"
   end
 
   create_table "chosen_answers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "survey_questions_id"
-    t.integer "answer_options_id"
+    t.integer "survey_question_id"
+    t.integer "answer_option_id"
   end
 
   create_table "survey_questions", force: :cascade do |t|
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "categories"
+    t.text "survey_question_text"
+    t.integer "total_votes"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "google_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
